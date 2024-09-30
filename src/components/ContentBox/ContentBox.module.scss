@@ -1,0 +1,13 @@
+@use '../../styles/variables' as *; 
+
+.contentBox {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .innerContentBox {
+        width: 1229px;
+        background: $White;
+        padding: 2rem;
+    }
+}

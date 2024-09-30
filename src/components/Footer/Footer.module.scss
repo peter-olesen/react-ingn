@@ -1,0 +1,22 @@
+@use '../../styles/variables' as *;
+
+.footer {
+    width: 100%;
+    height: 268px;
+    display: flex;
+    justify-content: center;
+    background: $White;
+    position: relative;
+    bottom: 0;
+    margin-top: 1rem;
+    
+    .innerFooter {
+        width: 1229px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+        p {
+            margin: 0.5rem 0;
+        }
+    }
+}

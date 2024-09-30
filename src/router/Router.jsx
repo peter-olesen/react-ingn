@@ -1,18 +1,17 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import { Home } from '../pages/Home';
-import { About } from '../pages/About';
-import { Contact } from '../pages/Contact';
 import { PageNotFound } from '../pages/PageNotFound';
 import { PATHS } from './paths';
+import { Layout } from '../layout/Layout';
 
 export const Router = () => {
   const location = useLocation();
 
   useEffect(() => {
     const pageTitles = {
-      [PATHS.home]: 'React + Vite Boilerplate',
-      [PATHS.about]: 'About',
+      [PATHS.home]: 'Intet nyt - Godt nyt',
+      [PATHS.news]: 'About',
       [PATHS.contact]: 'Contact',
     };
 
@@ -27,11 +26,13 @@ export const Router = () => {
 
   return (
     <Routes>
-      <Route index path={PATHS.home} element={<Home />} />
-      <Route path={PATHS.about} element={<About />} />
-      <Route path={PATHS.contact} element={<Contact />} />
+      <Route path={"/"} element={<Layout />}>
+        <Route index element={<Home />} />
+        {/* <Route path={PATHS.about} element={<About />} />
+        <Route path={PATHS.contact} element={<Contact />} /> */}
 
-      <Route path="*" element={<PageNotFound />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Route>
     </Routes>
   );
 };

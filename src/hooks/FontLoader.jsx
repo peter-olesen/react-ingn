@@ -9,7 +9,7 @@ export const FontLoader = () => {
     useEffect(() => {
         WebFont.load({
           google: {
-            families: ['Roboto', 'Chilanka']
+            families: ['Roboto Flex', 'Righteous']
           }
         });
     }, []);

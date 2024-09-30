@@ -1,0 +1,41 @@
+@use '../../styles/variables' as *;
+
+.topHeader {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: $White;
+    box-shadow: 0px 4px 4px 0px #00000017;
+    height: 80px;
+    margin-bottom: 1rem;
+
+    div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        // max-width: 1229px;
+        
+        h1 {
+            color: $Red;
+            font-family: 'Righteous';
+            font-size: 48px;
+            font-weight: 400;
+            margin: 0;
+        }
+        
+        .headerIcons {
+            svg {
+                fill: $Red;
+                margin: 0 0.5rem;
+                width: 28px;
+            }
+        }
+    
+        nav {
+            width: 850px;
+            display: flex;
+            justify-content: space-evenly;
+
+        }
+    }
+}
