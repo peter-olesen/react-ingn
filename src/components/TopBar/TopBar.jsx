@@ -2,35 +2,18 @@ import { NavLink } from "react-router-dom";
 import { PATHS } from '../../router/paths';
 import topStyle from './TopBar.module.scss'
 
-import userIcon from '../../assets/img/user-icon.svg'
-import burgerIcon from '../../assets/img/burger-icon.svg'
-
-const navItems = [
-    { id: 1, path: PATHS.home, label: 'Alle' },
-    { id: 2, path: PATHS.home, label: 'Indland' },
-    { id: 3, path: PATHS.home, label: 'Udland' },
-    { id: 4, path: PATHS.home, label: 'Teknologi' },
-    { id: 5, path: PATHS.home, label: 'Sport' },
-    { id: 6, path: PATHS.home, label: 'Politik' },
-    { id: 7, path: PATHS.home, label: 'Samfund' },
-];
-
-export const TopBar = () => (
+export const TopBar = ({ categories }) => (
     <header className={topStyle.topHeader}>
         <div>
             <NavLink to={PATHS.home}>
                 <h1>INGN</h1>
             </NavLink>
             <nav>
-                {navItems.map((item) => (
-                    <>
-                        |
-                        <NavLink key={item.id} to={item.path}>
-                            {item.label}
+                {categories.map((category, index) => (
+                        <NavLink key={index} to={`/${category.category}`}>
+                            {category.category}
                         </NavLink>
-                    </>
                 ))}
-                |
             </nav>
             <div className={topStyle.headerIcons}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z"/></svg>

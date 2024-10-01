@@ -8,6 +8,26 @@
     .innerContentBox {
         width: 1229px;
         background: $White;
-        padding: 2rem;
+        
+        .articleBox {
+            padding: 2rem;
+            font-weight: 400;
+            color: $TextColor;
+            font-size: 16px;
+
+            h2 {
+                font-size: 40px;
+                margin: 0.5rem 0;
+            }
+            
+            .byline {
+                color: $Red;
+                font-size: 14px;
+            }
+
+            .innerArticleBox {
+                width: 710px;
+            }
+        }
     }
 }

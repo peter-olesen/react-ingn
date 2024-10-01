@@ -36,6 +36,11 @@
             display: flex;
             justify-content: space-evenly;
 
+            a {
+                border-left: 1px solid $Black;
+                border-right: 1px solid $Black;
+                padding: 0 1rem;
+            }
         }
     }
 }

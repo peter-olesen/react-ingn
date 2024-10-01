@@ -1,0 +1,31 @@
+@use '../../styles/variables' as *; 
+
+.Card {
+    width: 600px;
+    // height: 630px;
+    color: #242424;
+    background: $White;
+
+    div {
+        margin: 1rem;
+    }
+
+    h3 {
+        font-weight: 400;
+        font-size: 40px;
+        margin: 0;
+    }
+
+    .byline {
+        color: $Red;
+        font-size: 14px;
+    }
+
+    a {
+        font-size: 14px;
+    }
+
+    img {
+        width: 100%;
+    }
+}

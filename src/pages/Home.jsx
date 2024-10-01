@@ -1,9 +1,12 @@
-import { ContentBox } from '../components/ContentBox/ContentBox'
+import { StoryCard } from '../components/StoryCard/StoryCard'
 
 export const Home = () => {
+    
     return (
-        <>
-            <ContentBox />
-        </>
+        <main className="frontMain">
+            <section>
+                <StoryCard />
+            </section>
+        </main>
     )
 }
