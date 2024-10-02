@@ -1,5 +1,5 @@
-export const allStories = `
-    query allStories {
+export const allArticles = `
+    query allArticles {
         stories {
             storyTitle
             storySlug

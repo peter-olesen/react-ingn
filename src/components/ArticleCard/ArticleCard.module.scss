@@ -2,7 +2,6 @@
 
 .Card {
     width: 600px;
-    // height: 630px;
     color: #242424;
     background: $White;
 
@@ -14,6 +13,7 @@
         font-weight: 400;
         font-size: 40px;
         margin: 0;
+        padding-top: 1rem;
     }
 
     .byline {

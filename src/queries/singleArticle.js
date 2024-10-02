@@ -1,5 +1,5 @@
-export const singleStory = `
-query singleStory($storySlug: String!) {
+export const singleArticle = `
+query singleArticle($storySlug: String!) {
   story(where: { storySlug: $storySlug }) {
     id
     storyTitle

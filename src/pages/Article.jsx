@@ -4,15 +4,15 @@ import { useEffect } from "react";
 import request from "graphql-request";
 import Markdown from 'markdown-to-jsx';
 import { format } from 'date-fns';
-import { singleStory } from "../queries/singleStory";
+import { singleArticle } from "../queries/singleArticle";
 import cs from '../components/ContentBox/ContentBox.module.scss';
 
 export const Article = () => {
   const { slug } = useParams();
 
   const { data, isLoading, error } = useQuery({
-    queryKey: ['singleNews', slug],
-    queryFn: async () => request(import.meta.env.VITE_ENDPOINT, singleStory, { storySlug: slug }),
+    queryKey: ['singleArticle', slug],
+    queryFn: async () => request(import.meta.env.VITE_ENDPOINT, singleArticle, { storySlug: slug }),
     enabled: !!slug,
   });
 

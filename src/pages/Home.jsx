@@ -1,11 +1,11 @@
-import { StoryCard } from '../components/StoryCard/StoryCard'
+import { ArticleCard } from '../components/ArticleCard/ArticleCard'
 
 export const Home = () => {
     
     return (
         <main className="frontMain">
             <section>
-                <StoryCard />
+                <ArticleCard />
             </section>
         </main>
     )

@@ -3,15 +3,15 @@ import { useQuery } from '@tanstack/react-query'
 import request from 'graphql-request'
 import { format } from 'date-fns';
 import { NavLink } from 'react-router-dom'
-import { allStories } from '../../queries/allStories'
+import { allArticles } from '../../queries/allArticles'
 
-import scs from './StoryCard.module.scss'
+import scs from './ArticleCard.module.scss'
 
-export const StoryCard = () => {
+export const ArticleCard = () => {
 
     const { data } = useQuery({
-        queryKey: ['allStories'],
-        queryFn: async () => request(import.meta.env.VITE_ENDPOINT, allStories)
+        queryKey: ['allArticles'],
+        queryFn: async () => request(import.meta.env.VITE_ENDPOINT, allArticles)
     })
 
     useEffect(() => {
