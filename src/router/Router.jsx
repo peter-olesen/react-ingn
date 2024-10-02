@@ -12,8 +12,6 @@ export const Router = () => {
   useEffect(() => {
     const pageTitles = {
       [PATHS.home]: 'Intet nyt - Godt nyt',
-      [PATHS.news]: 'About',
-      [PATHS.contact]: 'Contact',
       [PATHS.article]: '',
     };
 
@@ -30,9 +28,7 @@ export const Router = () => {
     <Routes>
       <Route path={"/"} element={<Layout />}>
         <Route index element={<Home />} />
-        <Route path={"/article"} element={<Article />} />
-        {/* <Route path={PATHS.about} element={<About />} />
-        <Route path={PATHS.contact} element={<Contact />} /> */}
+        <Route path="article/:slug" element={<Article />} />
 
         <Route path="*" element={<PageNotFound />} />
       </Route>
