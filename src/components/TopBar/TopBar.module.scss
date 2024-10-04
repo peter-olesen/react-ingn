@@ -13,7 +13,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        // max-width: 1229px;
+        width: 1220px;
         
         h1 {
             color: $Red;
@@ -24,21 +24,37 @@
         }
         
         .headerIcons {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            width: 72px;
             svg {
                 fill: $Red;
                 margin: 0 0.5rem;
-                width: 28px;
+                min-width: 28px;
             }
         }
     
         nav {
-            width: 850px;
+            width: 100%;
             display: flex;
             justify-content: space-evenly;
 
-            a {
-                border-left: 1px solid $Black;
+            ul {
+                display: flex;
+                flex-direction: row;
+                list-style: none;
                 border-right: 1px solid $Black;
+                padding: 0;
+
+                li {
+                    border-left: 1px solid $Black;
+                }
+            }
+
+            a {
+                // border-left: 1px solid $Black;
+                // border-right: 1px solid $Black;
                 padding: 0 1rem;
             }
         }

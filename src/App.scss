@@ -23,4 +23,40 @@ body {
             gap: 1.5rem;
         }
     }
+
+    .loginMain {
+        display: flex;
+        justify-content: center;
+
+        section {
+            display: grid;
+            grid-template-rows: auto;
+            justify-content: center;
+            align-items: baseline;
+            background: $White;
+            width: 1229px;
+            height: 900px;
+        }
+
+        form {
+            display: grid;
+
+            input {
+                width: 700px;
+                height: 65px;
+                border: 3px solid $Red;
+                margin-top: 0.5rem;
+                font-size: 24px;
+                padding-left: 1rem;
+            }
+
+            button {
+                width: 223px;
+                height: 65px;
+                border: 2px solid $Red;
+                font-size: 24px;
+                background: $White;
+            }
+        }
+    }
 }

@@ -5,6 +5,8 @@ import { PageNotFound } from '../pages/PageNotFound';
 import { PATHS } from './paths';
 import { Layout } from '../layout/Layout';
 import { Article } from '../pages/Article';
+import { Category } from '../pages/Category';
+import { Login } from '../pages/Login';
 
 export const Router = () => {
   const location = useLocation();
@@ -29,6 +31,8 @@ export const Router = () => {
       <Route path={"/"} element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="article/:slug" element={<Article />} />
+        <Route path="category/:category" element={<Category />} />
+        <Route path="login" element={<Login />} />
 
         <Route path="*" element={<PageNotFound />} />
       </Route>

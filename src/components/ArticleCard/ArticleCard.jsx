@@ -1,11 +1,11 @@
 import { useEffect } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import request from 'graphql-request'
-import { format } from 'date-fns';
+import { format } from 'date-fns'
 import { NavLink } from 'react-router-dom'
 import { allArticles } from '../../queries/allArticles'
 
-import scs from './ArticleCard.module.scss'
+import acs from './ArticleCard.module.scss'
 
 export const ArticleCard = () => {
 
@@ -14,18 +14,20 @@ export const ArticleCard = () => {
         queryFn: async () => request(import.meta.env.VITE_ENDPOINT, allArticles)
     })
 
+    const sortedByDate = data?.stories?.sort((a, b) => new Date(b.datePublished) - new Date(a.datePublished));
+
     useEffect(() => {
         // console.log(data);
     }, [data])
 
     return (
         <>
-            {data?.stories?.map((item, index) => (
+            {sortedByDate?.map((item, index) => (
                 <NavLink key={index} to={`article/${item.storySlug}`}>
-                    <div className={scs.Card}>
+                    <div className={acs.Card}>
                         <div>
                             <h3>{item.storyTitle}</h3>
-                            <p className={scs.byline}>D. {format(new Date(item.datePublished), 'dd/MM-yy')} af {item.byline}</p>
+                            <p className={acs.byline}>D. {format(new Date(item.datePublished), 'dd/MM-yy')} af {item.byline}</p>
                             <p>Læs mere</p>
                         </div>
                         <img src={item.storyImage[0].url} alt="" />

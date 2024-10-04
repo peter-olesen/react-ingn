@@ -1,6 +1,6 @@
 export const allArticles = `
     query allArticles {
-        stories {
+        stories (first: 100) {
             storyTitle
             storySlug
             byline
