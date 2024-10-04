@@ -20,7 +20,7 @@ const { data } = useQuery({
 const sortedByDate = data?.stories?.sort((a, b) => new Date(b.datePublished) - new Date(a.datePublished));
 
 useEffect(() => {
-    console.log(data);
+    // console.log(data);
 }, [data])
     
     return (

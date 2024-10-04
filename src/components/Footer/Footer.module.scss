@@ -20,3 +20,18 @@
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+
+    .footer {
+        height: 100%;
+
+        .innerFooter {
+            display: grid;
+            grid-template-columns: 1fr;
+            padding-left: 2rem;
+            padding-bottom: 2rem;
+        }
+
+    }
+}

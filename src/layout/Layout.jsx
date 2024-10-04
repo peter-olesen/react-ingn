@@ -1,15 +1,15 @@
+import { useState } from "react";
 import { TopBar } from '../components/TopBar/TopBar'
-import { Outlet } from 'react-router-dom'
+import { Outlet as Content } from 'react-router-dom'
 import { Footer } from '../components/Footer/Footer'
-import { useFetchCategories } from '../hooks/queryFetch';
 
 export const Layout = () => {
-  const { data } = useFetchCategories();
+  const [isVisible, setIsVisible] = useState(false);
 
   return (
     <>
-    <TopBar categories={data?.stories || []} />
-    <Outlet />
+    <TopBar isVisible={isVisible} setisVisible={setIsVisible} />
+    <Content />
     <Footer />
     </>
   )

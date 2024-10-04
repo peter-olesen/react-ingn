@@ -60,3 +60,38 @@
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    .topHeader {
+        height: 100%;
+
+        div {
+            display: flex;
+            flex-direction: column;
+
+            nav {
+                display: none;
+                
+                &.visible {
+                    display: flex;
+                    justify-content: center;
+
+                    ul {
+                        flex-direction: column;
+                        border: 0;
+    
+                        li {
+                            border: 0;
+                        }
+                    }
+                }
+            }
+
+            .headerIcons {
+                // display: none;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    }
+}

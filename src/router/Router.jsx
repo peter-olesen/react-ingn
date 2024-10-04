@@ -15,6 +15,7 @@ export const Router = () => {
     const pageTitles = {
       [PATHS.home]: 'Intet nyt - Godt nyt',
       [PATHS.article]: '',
+      [PATHS.login]: 'Login - INGN',
     };
 
     const currentTitle = pageTitles[location.pathname];

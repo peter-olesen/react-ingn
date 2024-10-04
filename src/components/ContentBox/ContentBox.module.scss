@@ -31,3 +31,22 @@
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    .contentBox {
+        .innerContentBox {
+            width: 90%;
+
+            img {
+                width: 100%;
+            }
+
+            .articleBox {
+
+                .innerArticleBox {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

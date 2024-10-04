@@ -29,13 +29,12 @@ body {
         justify-content: center;
 
         section {
-            display: grid;
-            grid-template-rows: auto;
+            display: flex;
             justify-content: center;
-            align-items: baseline;
             background: $White;
             width: 1229px;
             height: 900px;
+            padding-top: 2rem;
         }
 
         form {
@@ -50,12 +49,50 @@ body {
                 padding-left: 1rem;
             }
 
-            button {
+            input[type=button] {
                 width: 223px;
                 height: 65px;
                 border: 2px solid $Red;
                 font-size: 24px;
                 background: $White;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        .frontMain {
+            section {
+                display: grid;
+                grid-template-columns: 1fr;
+                margin: 0 1rem;
+            }
+        }
+
+        .loginMain {
+            section {
+                width: 90%;
+                height: 100%;
+                padding-bottom: 4rem;
+
+                div {
+                    width: 90%;
+
+                    form {
+                        input[type=text], input[type=password] {
+                            width: 90%;
+                            border: 2px solid $Red;
+                            padding: 0;
+                        }
+    
+                        input[type=button] {
+                            width: 90%;
+                            padding: 0;
+                        }
+                    }
+                }
+                
             }
         }
     }

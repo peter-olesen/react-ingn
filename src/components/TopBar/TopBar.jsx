@@ -1,12 +1,21 @@
 import { NavLink } from "react-router-dom";
 import { PATHS } from '../../router/paths';
 import topStyle from './TopBar.module.scss'
-import { useFetchCategories } from '../../hooks/queryFetch';
+import { useQuery } from "@tanstack/react-query";
+import request from "graphql-request";
+import { categories } from "../../queries/allCategories";
 import { FaUser, FaBars } from "react-icons/fa";
 
-export const TopBar = () => {
+export const TopBar = ({ isVisible, setisVisible }) => {
+    const handleNavbar = () => {
+        setisVisible((prev) => !prev);
+  };
 
-const { data, isLoading, error } = useFetchCategories();
+const { data, isLoading, error } = 
+    useQuery({
+    queryKey: ['categories'],
+    queryFn: async () => request(import.meta.env.VITE_ENDPOINT, categories)
+  });
 
     if (isLoading) {
     return <p>Loading...</p>;
@@ -22,9 +31,12 @@ const { data, isLoading, error } = useFetchCategories();
             <NavLink to={PATHS.home}>
                 <h1>INGN</h1>
             </NavLink>
-            <nav>
+            <nav className={isVisible ? topStyle.visible : ''}>
                 <ul>
-                {data?.categories?.map((category, index) => (
+                    <li>
+                        <NavLink to="/">Alle</NavLink>
+                    </li>
+                    {data?.categories?.map((category, index) => (
                     <li key={index}>
                         <NavLink to={`category/${category.category}`}>
                                 {category.category}
@@ -34,10 +46,10 @@ const { data, isLoading, error } = useFetchCategories();
                 </ul>
             </nav>
             <div className={topStyle.headerIcons}>
-                <NavLink to={'Login'}>
+                <NavLink to={'/login'}>
                     <FaUser />
                 </NavLink>
-                {/* <FaBars /> */}
+                <FaBars onClick={handleNavbar} />
             </div>
         </div>
     </header>
